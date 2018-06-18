@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="RasmussenBSCSApp.FacultyList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RasmussenBSCSApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Uid="rasAppHeader" TextWrapping="Wrap" Text="Designed By: David Mohlis Software" VerticalAlignment="Stretch" TextAlignment="Center" FontWeight="Bold" FontSize="20" />
+        <TextBlock x:Uid="facultyListHeader" TextWrapping="Wrap" Margin="93,30,92,540" HorizontalAlignment="Center" Text="facultylist" Style="{ThemeResource HeaderTextBlockStyle}"></TextBlock>
+
+        <Image x:Name="facultyImage" Margin="20,175,250,440" Width="150" Height="150"></Image>
+        <TextBlock x:Name="btnDescription" Text="Please select faculty member to show information." Tapped="BackButton_Tapped" Margin="10,100,10,10" TextAlignment="Center" FontSize="15"/>
+        <ListView Margin="0,120,0,0">
+            <ListViewItem x:Name="faculty1" Tapped="Faculty1_Tapped">John Doe</ListViewItem>
+            <ListViewItem x:Name="faculty2" Tapped="Faculty2_Tapped">Chad Smith</ListViewItem>
+            <ListViewItem x:Name="faculty3" Tapped="Faculty3_Tapped">Ben Marker</ListViewItem>
+            <ListViewItem x:Name="faculty4" Tapped="Faculty4_Tapped">Cole Baker</ListViewItem>
+        </ListView>
+
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource NavigationBackButtonNormalStyle}" Tapped="BackButton_Tapped"></Button>
+        <!-- Rasmussen Logo in "footer" using url in Resources.resw file under imgLogo -->
+        <Image x:Uid="imgLogo" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="40" Width="200" ></Image>
+    </Grid>
+</Page>
+

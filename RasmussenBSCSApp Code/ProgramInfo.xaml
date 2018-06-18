@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="RasmussenBSCSApp.ProgramInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RasmussenBSCSApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <TextBlock x:Uid="rasAppHeader" TextWrapping="Wrap" Text="Designed By: David Mohlis Software" VerticalAlignment="Stretch" TextAlignment="Center" FontWeight="Bold" FontSize="20" />
+        <TextBlock x:Uid="programInfoHeader" TextWrapping="Wrap" Margin="0, 30,0, 550" Text="programinfo" HorizontalAlignment="Center" Style="{ThemeResource HeaderTextBlockStyle}"></TextBlock>
+
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 105">
+            <TextBlock x:Uid="programVision" Text="" TextWrapping="Wrap" Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock x:Uid="visionDescription" Text="" TextWrapping="Wrap" Padding="5"></TextBlock>
+            <TextBlock x:Uid="programObjective" Text="" TextWrapping="Wrap" Padding="5"></TextBlock>
+            <TextBlock x:Uid="objectiveDescription" Text="" TextWrapping="Wrap" Padding="5"></TextBlock>
+        </StackPanel>
+
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource NavigationBackButtonNormalStyle}" Tapped="BackButton_Tapped"></Button>
+        <!-- Rasmussen Logo in "footer" using url in Resources.resw file under imgLogo -->
+        <Image x:Uid="imgLogo" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="40" Width="200" ></Image>
+    </Grid>
+</Page>

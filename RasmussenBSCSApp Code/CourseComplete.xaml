@@ -1,0 +1,176 @@
+﻿<Page
+    x:Class="RasmussenBSCSApp.CourseComplete"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RasmussenBSCSApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="main">
+            <!-- Rasmussen Logo in "footer" using url in Resources.resw file under imgLogo -->
+            <Image x:Uid="imgLogo" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="40" Width="200" ></Image>
+            <TextBlock x:Uid="rasAppHeader" Text="Designed By: David Mohlis Software" VerticalAlignment="Stretch" TextAlignment="Center" FontWeight="Bold" FontSize="20" />
+            <TextBlock x:Uid="courseCompleteHeader" Text="coursecomplete" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{ThemeResource HeaderTextBlockStyle}" Margin="0,30,0,40"></TextBlock>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50, 150" >
+                <ListViewItem x:Name="courseCompleteListViewItem" Tapped="CourseCompleteList_Tapped" Content="Courses Complete"></ListViewItem>
+                <ListViewItem x:Name="addCourseListViewItem" Tapped="AddCourse_Tapped" Content="Add Course"></ListViewItem>
+                <ListViewItem x:Name="updateCourseListViewItem" Tapped="UpdateCourse_Tapped" Content="Update Course"></ListViewItem>
+                <ListViewItem x:Name="deleteCourseListViewItem" Tapped="DeleteCourse_Tapped" Content="Delete Course"></ListViewItem>
+            </StackPanel>
+
+            <!--Code for Courses Complete feature-->
+            <TextBlock Margin="50, 200" Text="View Completed Courses" HorizontalAlignment="Left" x:Name="viewCoursesHeader" Visibility="Collapsed"></TextBlock>
+            <Button Margin="0,200,50,0" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Update Course List" x:Name="viewCourseButton" Visibility="Collapsed" Tapped="UpdateCourses_Tapped"></Button>
+            <Grid Margin="50, 240" x:Name="courseCompleteListTable" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"></ColumnDefinition>
+                    <ColumnDefinition Width="127"></ColumnDefinition>
+                    <ColumnDefinition Width="68"></ColumnDefinition>
+                    <ColumnDefinition Width="64"></ColumnDefinition>
+                    <ColumnDefinition Width="75"></ColumnDefinition>
+                    <ColumnDefinition Width="125"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+
+            <!--Code for Add Course feature -->
+            <Grid Margin="50, 200" x:Name="addCourseForm" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Add Course Information" FontSize="20" FontWeight="Bold" TextAlignment="Left" Padding="0,5"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Select Course"></TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="1" Width="250" x:Name="selectCourseName">
+                    <ComboBoxItem x:Name="ComboBox1" Content="Advanced Cloud Computing Technologies" Tapped="ComboBox1_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox2" Content="Advanced Mobile Web Application Development" Tapped="ComboBox2_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox3" Content="Business Project Management" Tapped="ComboBox3_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox4" Content="Computer Science Capstone" Tapped="ComboBox4_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox5" Content="Database Implementation Strategies for Programmers" Tapped="ComboBox5_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox6" Content="Emerging Trends in Technology" Tapped="ComboBox6_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox7" Content="Fundamentals of Cloud Computing" Tapped="ComboBox7_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox8" Content="Fundamentals of Distributed Application Architecture" Tapped="ComboBox8_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox9" Content="Fundamentals of Distributed Database Management" Tapped="ComboBox9_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox10" Content="Fundamentals of Enterprise Architecture" Tapped="ComboBox10_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox11" Content="Fundamentals of Mobile Web Application Development" Tapped="ComboBox11_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox12" Content="Introduction to Business Intelligence" Tapped="ComboBox12_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox13" Content="Operations Management" Tapped="ComboBox13_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox14" Content="Universal Windows Applications Programming I" Tapped="ComboBox14_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox15" Content="Universal Windows Applications Programming II" Tapped="ComboBox15_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox16" Content="Universal Windows Applications Cloud Integration" Tapped="ComboBox16_Tapped"></ComboBoxItem>
+                    <ComboBoxItem x:Name="ComboBox17" Content="Web Analytics" Tapped="ComboBox17_Tapped"></ComboBoxItem>
+                </ComboBox>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Course Name (Read Only)"></TextBlock>
+                <TextBox IsReadOnly="True" Grid.Row="2" Grid.Column="1" x:Name="addCourseName"></TextBox>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Course Number (Read Only)"></TextBlock>
+                <TextBox IsReadOnly="True" Grid.Row="3" Grid.Column="1" x:Name="addCourseNumber"></TextBox>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Credits (Read Only)"></TextBlock>
+                <TextBox IsReadOnly="True" Grid.Row="4" Grid.Column="1" x:Name="addCreditsReceived"></TextBox>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Grade Received"></TextBlock>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="addGrade"></TextBox>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Quarter Complete"></TextBlock>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="addQuarter"></TextBox>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Instructor"></TextBlock>
+                <TextBox Grid.Row="7" Grid.Column="1" x:Name="addInstructor"></TextBox>
+                <Button Grid.Row="8" Grid.Column="1" Content="Submit" HorizontalAlignment="Right" Margin="0,10,0,0" Tapped="SubmitAddCourse_Tapped"></Button>
+            </Grid>
+
+            <!-- Code for Update Course feature-->
+            <Grid Margin="50, 200" x:Name="updateCourseForm" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Update Course Information" FontSize="20" FontWeight="Bold" TextAlignment="Left" Padding="0,5"></TextBlock>
+                <Button x:Name="updateLoad" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Content="Load Selection" Tapped="UpdateCourseForm_Tapped"></Button>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Select Course"></TextBlock>
+                <TextBlock Visibility="Collapsed" x:Name="updateId"></TextBlock>
+                <ComboBox Grid.Row="1" Width="199" x:Name="updateSelectName" Grid.Column="1"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Course Name (Read Only)"></TextBlock>
+                <TextBox IsReadOnly="true" Grid.Row="2" Grid.Column="1" x:Name="updateCourseName"></TextBox>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Course Number (Read Only)"></TextBlock>
+                <TextBox Grid.Row="3" Grid.Column="1" x:Name="updateCourseNumber" IsReadOnly="True"></TextBox>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Credits (Read Only)"></TextBlock>
+                <TextBox Grid.Row="4" Grid.Column="1" x:Name="updateCreditsReceived" IsReadOnly="True"></TextBox>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Grade Received"></TextBlock>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="updateGrade"></TextBox>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Quarter Complete"></TextBlock>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="updateQuarter"></TextBox>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Instructor"></TextBlock>
+                <TextBox Grid.Row="7" Grid.Column="1" x:Name="updateInstructor"></TextBox>
+                <Button Grid.Row="8" Grid.Column="1" Content="Update" HorizontalAlignment="Right" Margin="0,10,0,0" Tapped="SubmitUpdateCourse_Tapped"></Button>
+            </Grid>
+
+            <!-- Code for Delete Course feature-->
+            <Grid Margin="50, 200" x:Name="deleteCourseForm" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Delete Course Information" FontSize="20" FontWeight="Bold" TextAlignment="Left" Padding="0,5"></TextBlock>
+                <Button x:Name="deleteLoad" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Content="Load Selection" Tapped="DeleteCourseForm_Tapped"></Button>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Select Course"></TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="1" Width="250" x:Name="deleteSelectedName">
+
+                </ComboBox>
+                <TextBlock Visibility="Collapsed" x:Name="deleteId"></TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Course Name (Read Only)"></TextBlock>
+                <TextBox IsReadOnly="True" Grid.Row="2" Grid.Column="1" x:Name="deleteCourseName"></TextBox>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Course Number (Read Only)"></TextBlock>
+                <TextBox IsReadOnly="True" Grid.Row="3" Grid.Column="1" x:Name="deleteCourseNumber"></TextBox>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Credits (Read Only)"></TextBlock>
+                <TextBox IsReadOnly="True" Grid.Row="4" Grid.Column="1" x:Name="deleteCreditsReceived"></TextBox>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Grade Received (Read Only)"></TextBlock>
+                <TextBox Grid.Row="5" Grid.Column="1" x:Name="deleteGrade" IsReadOnly="True"></TextBox>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Quarter Complete (Read Only)"></TextBlock>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="deleteQuarter" IsReadOnly="True"></TextBox>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Instructor (Read Only)"></TextBlock>
+                <TextBox Grid.Row="7" Grid.Column="1" x:Name="deleteInstructor" IsReadOnly="True"></TextBox>
+                <Button Grid.Row="8" Grid.Column="1" Content="Delete" HorizontalAlignment="Right" Margin="0,10,0,0" Tapped="SubmitDeleteCourse_Tapped"></Button>
+            </Grid>
+
+            <Button  VerticalAlignment="Bottom" HorizontalAlignment="Left" Style="{StaticResource NavigationBackButtonNormalStyle}" Tapped="BackButton_Tapped"></Button>
+        </Grid>
+    </ScrollViewer>
+</Page>
